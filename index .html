@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Aradhya ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#090b1f,#161b40,#000);
+overflow-x:hidden;
+color:white;
+text-align:center;
+}
+
+#stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-2;
+}
+
+.star{
+position:absolute;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+50%{
+opacity:.2;
+}
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+h1{
+font-size:70px;
+color:#ff7eb3;
+text-shadow:0 0 20px hotpink;
+}
+
+h2{
+font-size:34px;
+margin-top:10px;
+}
+
+p{
+margin-top:15px;
+font-size:20px;
+}
+
+button{
+margin-top:30px;
+padding:15px 35px;
+font-size:20px;
+background:#ff4f93;
+border:none;
+border-radius:40px;
+color:white;
+cursor:pointer;
+transition:.4s;
+}
+
+button:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px hotpink;
+}
+
+#message{
+display:none;
+padding:60px 20px;
+max-width:800px;
+margin:auto;
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.love{
+font-size:22px;
+line-height:1.8;
+}
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin:40px auto;
+max-width:900px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+border:3px solid white;
+box-shadow:0 0 20px hotpink;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+box-shadow:0 0 35px #ff4f93;
+}
+.heart{
+position:fixed;
+bottom:-50px;
+font-size:25px;
+animation:float 6s linear forwards;
+pointer-events:none;
+z-index:999;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0) scale(1);
+opacity:1;
+}
+100%{
+transform:translateY(-110vh) scale(1.8);
+opacity:0;
+}
+}
+.balloon{
+position:fixed;
+bottom:-120px;
+font-size:45px;
+animation:balloonUp 10s linear forwards;
+pointer-events:none;
+z-index:998;
+}
+
+@keyframes balloonUp{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+#lockScreen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+#password{
+padding:12px;
+font-size:18px;
+border-radius:10px;
+border:none;
+width:250px;
+text-align:center;
+}
+#cake{
+display:none;
+padding:50px 20px;
+text-align:center;
+}
+
+#cake .emojiCake{
+font-size:130px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+#wish{
+margin-top:20px;
+font-size:28px;
+color:#ffd700;
+text-shadow:0 0 15px gold;
+}
+.hero,
+#message{
+display:none;
+}
+#finalWish{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+z-index:99999;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+color:white;
+}
+
+#finalWish h1{
+font-size:60px;
+color:#ff7eb3;
+text-shadow:0 0 20px hotpink;
+}
+
+#finalWish p{
+font-size:26px;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+<div id="lockScreen">
+    <h2>🔒 Private Surprise</h2>
+    <p>Enter Password</p>
+
+    <input type="password" id="password" placeholder="Password">
+
+    <br><br>
+
+    <button onclick="unlock()">Open ❤️</button>
+
+    <p id="wrong" style="color:red;"></p>
+</div>
+<div id="stars"></div>
+<section class="hero">
+
+<h1>🎂 Happy Birthday</h1>
+
+<h2>Aradhya ❤️</h2>
+
+<p>From Div 💖</p>
+
+<button onclick="showMessage()">
+Open Your Surprise 🎁
+</button>
+
+
+</section>
+
+<section id="message">
+
+<h1>💖 Dear Aradhya 💖</h1>
+<h2>📸 Our Beautiful Memories</h2>
+
+<div class="gallery">
+    <img src="photo1.jpeg">
+    <img src="photo2.jpeg">
+    <img src="photo3.jpeg">
+    <img src="photo4.jpeg">
+</div>
+
+<br><br>
+<p class="love" id="typing">
+
+Happy Birthday to the most amazing girl in my life ❤️
+
+<br><br>
+
+Thank you for every smile,
+every laugh,
+and every beautiful memory.
+
+<br><br>
+
+I pray this year brings you endless happiness,
+good health,
+success,
+and everything your heart wishes for.
+
+<br><br>
+
+No matter what happens,
+you'll always be someone incredibly special to me.
+
+<br><br>
+
+❤️ Happy Birthday Once Again ❤️
+
+<br><br>
+
+<b>Forever Yours,<br>Div</b>
+
+</p>
+<div id="cake">
+
+<h1>🎂 Birthday Cake 🎂</h1>
+
+<div class="emojiCake">🎂</div>
+
+<button onclick="blowCandles()">
+🕯 Blow the Candles
+</button>
+
+<h2 id="wish"></h2>
+
+</div>
+</section>
+
+<script>
+
+let stars=document.getElementById("stars");
+
+for(let i=0;i<200;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"%";
+
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDelay=Math.random()*2+"s";
+
+stars.appendChild(star);
+
+}
+function showMessage(){
+
+document.querySelector(".hero").style.display="none";
+
+document.getElementById("message").style.display="block";
+document.getElementById("cake").style.display="block";
+typeMessage();
+document.getElementById("bgMusic").play();
+confetti({
+  particleCount:180,
+  spread:100,
+  origin:{y:0.6}
+});
+window.scrollTo(0,0);
+
+}
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(function(){
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,400);
+function createBalloon(){
+
+const balloon=document.createElement("div");
+
+balloon.className="balloon";
+
+const balloons=["🎈","🎈","🎈","🎈","🎉"];
+
+balloon.innerHTML=balloons[Math.floor(Math.random()*balloons.length)];
+
+balloon.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(balloon);
+
+setTimeout(function(){
+balloon.remove();
+},10000);
+
+}
+
+setInterval(createBalloon,1500);
+const fullMessage = `Happy Birthday to the most amazing girl in my life ❤️
+
+Thank you for every smile,
+every laugh,
+and every beautiful memory.
+
+I pray this year brings you endless happiness,
+good health,
+success,
+and everything your heart wishes for.
+
+No matter what happens,
+you'll always be someone incredibly special to me.
+
+❤️ Happy Birthday Once Again ❤️
+
+Forever Yours,
+Div`;
+
+function typeMessage(){
+
+let i=0;
+
+const box=document.getElementById("typing");
+
+box.innerHTML="";
+
+const typing=setInterval(function(){
+
+box.innerHTML = (box.innerHTML + fullMessage.charAt(i)).replace(/\n/g,"<br>");
+
+i++;
+
+if(i>=fullMessage.length){
+clearInterval(typing);
+}
+
+},40);
+
+}
+function unlock(){
+
+const pass=document.getElementById("password").value;
+
+if(pass==="churel"){
+
+document.getElementById("lockScreen").style.display="none";
+document.querySelector(".hero").style.display="flex";
+
+}else{
+
+document.getElementById("wrong").innerHTML="❌ Wrong Password";
+
+}
+
+}
+function blowCandles(){
+
+document.getElementById("wish").innerHTML =
+"✨ Happy Birthday Aradhya ❤️ ✨";
+
+confetti({
+particleCount:500,
+spread:180,
+origin:{y:0.6}
+});
+
+setTimeout(function(){
+
+document.getElementById("finalWish").style.display="flex";
+
+confetti({
+particleCount:800,
+spread:360,
+origin:{y:0.5}
+});
+
+},2000);
+
+}
+</script>
+<audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<div id="finalWish">
+
+<h1>🎉 Happy Birthday Aradhya ❤️</h1>
+
+<p>
+You are the best gift life has ever given me 💖
+<br><br>
+Forever Yours,<br>Div ❤️
+</p>
+
+</div>
+
+</body>
+</html>
